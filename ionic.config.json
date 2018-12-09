@@ -1,5 +1,7 @@
 {
   "name": "daily_task_v2",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

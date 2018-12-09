@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+    <ion-back-button></ion-back-button>
+  </ion-buttons>
+    <ion-title>My task</ion-title>
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content padding>
+  <h2>Edit task</h2>
+  <form (ngSubmit)="updateTask()">
+
+    <ion-item>
+      <ion-datetime displayFormat="HH:mm:ss:A" [(ngModel)]="task.taskTime" name="taskTime" placeholder="pick start time..." required="required"></ion-datetime>
+    </ion-item>
+
+    <ion-item>
+      <ion-input type="text" placeholder="dayTask" [(ngModel)]="task.dayTask" name="dayTask" required=""></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input type="boolean" placeholder="status" [(ngModel)]="task.isComplete" name="isComplete" required=""></ion-input>
+    </ion-item>
+
+    <ion-input type="hidden" [(ngModel)]="task.taskId" name="taskId"></ion-input>
+
+    <ion-button type="submit" expand="block">Update task</ion-button>
+  </form>
+</ion-content>

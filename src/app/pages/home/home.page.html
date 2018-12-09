@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Home</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-fab vertical="top" horizontal="end" edge>
+    <ion-fab-button mini (click)="addTask()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  <h4 style="padding-left: 3%">TIME NOW: {{ taskStartTime }} </h4>
+  <br>
+  <ion-card-title style="padding-left: 3%">Activities for the day</ion-card-title>
+
+  <ion-row *ngFor="let task of tasks; let i=index">
+    <ion-col size="6">
+      <p>{{i+1}}. {{task.dayTask}} {{task.taskTime}}
+      </p>
+    </ion-col>
+    <ion-col size="1">
+      <ion-checkbox style="margin-top: 15px;" [(ngModel)]="task.isComplete" (click)="toggleStatus(task)"></ion-checkbox>
+    </ion-col>
+    <ion-col size="5">
+      <button ion-button color="primary" (click)="editTask(task.taskId)">
+        <ion-icon name="paper"></ion-icon>
+      </button>
+      <ion-button color="danger" (click)="deleteTask(task.taskId)">
+        <ion-icon name="trash"></ion-icon>
+      </ion-button>
+
+    </ion-col>
+  </ion-row>
+
+
+
+
+</ion-content>

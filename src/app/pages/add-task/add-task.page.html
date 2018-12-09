@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+    <ion-back-button></ion-back-button>
+  </ion-buttons>
+    <ion-title>Add task</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-content>
+    <form [formGroup]="formGroup" (ngSubmit)="createTask(formGroup.value)">
+      <ion-list>
+
+        <ion-item class="form-group">
+          <ion-textarea placeholder="enter your task here .." formControlName="dayTask"></ion-textarea>
+        </ion-item>
+        <ion-item>
+          <ion-datetime formControlName="taskTime" displayFormat="HH:mm:ss" placeholder="pick alert time..." required="required"></ion-datetime>
+        </ion-item>
+
+      </ion-list>
+      <ion-button expand="block" size="large" color="secondary" type="submit">Create task</ion-button>
+    </form>
+  </ion-content>
+
+</ion-content>
